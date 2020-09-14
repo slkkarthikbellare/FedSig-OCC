@@ -1,0 +1,12 @@
+{
+  "resources" : {
+   "paymentMethodsHelpText": "Select the payment methods.",
+    "paymentMethodsLabel": "Payment Methods",
+    "genericLabel": "Snappay",
+    "title": "Snappay Payment Gateway Config",
+    "description":"Snappay Payment Gateway configuration.",
+    "agentInstanceLabel": "Agent Configuration",
+    "previewInstanceLabel": "Preview Configuration",
+    "storefrontInstanceLabel": "Storefront Configuration"
+  }
+}

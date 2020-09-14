@@ -1,0 +1,9 @@
+{
+  "extensionID": "e2c6b443-bad4-4943-8cc7-9af53c65b002",
+  "developerID": "123456",
+  "createdBy": "Sachin Padhye",
+  "name": "FS Application Level JS Extension",
+  "version": 1,
+  "timeCreated": "2020-04-21",
+  "description": "Application level javascript for reusable functions"
+}

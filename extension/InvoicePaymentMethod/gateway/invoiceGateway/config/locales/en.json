@@ -1,0 +1,21 @@
+{
+  "resources": {
+    "paymentMethodsHelpText": "Select the payment methods.",
+    "paymentMethodsLabel": "Payment Methods",
+    "invoiceLabel": "Invoice",
+    "cardLabel": "CCCard",
+    "title": "Invoice Payment Gateway Config",
+    "description": "Invoice Payment Gateway configuration.",
+    "agentInstanceLabel": "Agent Configuration",
+    "previewInstanceLabel": "Preview Configuration",
+    "storefrontInstanceLabel": "Storefront Configuration",
+    "poRequiredHelpText": "Check if PO number is required",
+    "poRequiredLabel": "PO number required",
+    "includeOrderHelpText": "Include the order payload in invoice auths",
+    "includeOrderLabel" : "Include Order in Payload",
+    "enabledForScheduledOrderLabel": "Enable for Scheduled Orders",
+    "enabledForScheduledOrderHelpText": "Enable for Scheduled Orders",
+    "enabledForApprovalLabel": "Enable for Approvals",
+    "enabledForApprovalHelpText": "Enable for Approvals"
+  }
+}

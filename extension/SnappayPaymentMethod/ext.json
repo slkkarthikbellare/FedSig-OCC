@@ -1,0 +1,10 @@
+{
+  "extensionID": "d9cdeead-9c38-41ff-8eca-d2c7ea9b8ddf",
+  "developerID": "100001",
+  "createdBy": "Pierce Washington",
+  "name": "SnappayPaymentGateway",
+  "version": 1,
+  "timeCreated": "2020-12-05",
+  "description": "Snappay Payment Gateway"
+}
+

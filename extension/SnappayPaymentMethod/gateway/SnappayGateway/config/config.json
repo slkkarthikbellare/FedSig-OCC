@@ -1,0 +1,41 @@
+{
+  "configType": "payment",
+  "titleResourceId": "title",
+  "descriptionResourceId": "description",
+  "instances" : [
+    {
+      "id": "agent",
+      "instanceName": "agent",
+      "labelResourceId": "agentInstanceLabel"
+    },
+    {
+      "id": "preview",
+      "instanceName": "preview",
+      "labelResourceId": "previewInstanceLabel"
+    },
+    {
+      "id": "storefront",
+      "instanceName": "storefront",
+      "labelResourceId": "storefrontInstanceLabel"
+    } 
+  ],
+  "properties": [
+  {
+      "id": "paymentMethodTypes",
+      "type": "multiSelectOptionType",
+      "name": "paymentMethodTypes",
+      "required": true,
+      "helpTextResourceId": "paymentMethodsHelpText",
+      "labelResourceId": "paymentMethodsLabel",
+      "defaultValue": "generic",
+      "displayAsCheckboxes": true,
+      "options": [
+		 {
+           "id": "generic",
+           "value": "generic",
+           "labelResourceId": "genericLabel"
+         }
+       ]
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "resources" : {
+    "merchantIdHelpText": "[de][ enter the Merchant Id. ]",
+    "merchantIdLabel": "[de][ Merchant Id ]",
+    "merchantSecretKeyLabel" : "[de][ Merchant Secret Key]",   
+    "merchantSecretKeyHelpText" : "[de][ Merchant Secret key ] ",
+    "paymentMethodsHelpText": "[de][ Select the payment methods. ]",
+    "paymentMethodsLabel": "[de][ Payment Methods ]",
+    "invoiceLabel": "[de][ Invoice ]",
+ "cardLabel": "[De][Card]",    "title": "[de][ Test Payment Gateway]",
+    "description":"[de][ Test Payment Gateway configuration.]",
+    "agentInstanceLabel": "[de][ Agent Configuration]",
+    "previewInstanceLabel": "[de][ Preview Configuration]",
+    "storefrontInstanceLabel": "[de][ Storefront Configuration]"
+  }
+}

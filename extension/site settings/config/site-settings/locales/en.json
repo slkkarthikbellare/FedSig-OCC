@@ -1,0 +1,18 @@
+{
+    "resources": {
+        "title": "Site Settings",
+        "description": "Site settings.",
+        "jde_companyHelpText": "Company Code",
+        "jde_companyLabel": "Company Code",
+        "jde_header_branch_plantHelpText": "Business Unit (header)",
+        "jde_header_branch_plantLabel": "Business Unit (header)",
+        "jde_detail_branch_plantHelpText": "Business Unit (detail)",
+        "jde_detail_branch_plantLabel": "Business Unit (detail)",
+        "isChatEnabledLabel": "Enable Chat",
+        "isChatEnabledHelpText": "Check the box tomake Chat feature available across the site.",
+        "shipmentOptionLabel": "Select Default Shipment Option",
+        "shipmentOptionHelpText": "Select the default shipment option for the site.",
+        "isPartialLabel": "Partial Shipping",
+        "isCompleteLabel": "Complete Shipping"
+    }
+}

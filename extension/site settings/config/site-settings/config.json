@@ -1,0 +1,54 @@
+{
+    "widgetDescriptorName": "multisiteconfigdemo",
+    "titleResourceId": "title",
+    "descriptionResourceId": "description",
+    "properties": [{
+            "id": "jde_company",
+            "type": "stringType",
+            "name": "jde_company",
+            "labelResourceId": "jde_companyLabel",
+            "required": false
+        },
+        {
+            "id": "jde_header_branch_plant",
+            "type": "stringType",
+            "name": "jde_header_branch_plant",
+            "labelResourceId": "jde_header_branch_plantLabel",
+            "required": false
+        },
+        {
+            "id": "jde_detail_branch_plant",
+            "type": "stringType",
+            "name": "jde_detail_branch_plant",
+            "labelResourceId": "jde_detail_branch_plantLabel",
+            "required": false
+        },
+        {
+            "id": "isChatEnabled",
+            "type": "booleanType",
+            "name": "isChatEnabled",
+            "helpTextResourceId": "isChatEnabledHelpText",
+            "labelResourceId": "isChatEnabledLabel",
+            "defaultValue": false
+        },
+        {
+            "id": "shipmentOption",
+            "type": "optionType",
+            "options": [{
+                    "id": "isPartial",
+                    "labelResourceId": "isPartialLabel",
+                    "value": "isPartial"
+                },
+                {
+                    "id": "isComplete",
+                    "labelResourceId": "isCompleteLabel",
+                    "value": "isComplete"
+                }
+            ],
+            "name": "shipmentOption",
+            "helpTextResourceId": "shipmentOptionHelpText",
+            "labelResourceId": "shipmentOptionLabel",
+            "defaultValue": "isComplete"
+        }
+    ]
+}

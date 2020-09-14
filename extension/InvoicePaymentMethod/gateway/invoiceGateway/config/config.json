@@ -1,0 +1,71 @@
+{
+  "configType": "payment",
+  "titleResourceId": "title",
+  "descriptionResourceId": "description",
+  "instances": [
+    {
+      "id": "agent",
+      "instanceName": "agent",
+      "labelResourceId": "agentInstanceLabel"
+    },
+    {
+      "id": "preview",
+      "instanceName": "preview",
+      "labelResourceId": "previewInstanceLabel"
+    },
+    {
+      "id": "storefront",
+      "instanceName": "storefront",
+      "labelResourceId": "storefrontInstanceLabel"
+    }
+  ],
+  "properties": [
+    {
+      "id": "enabledForScheduledOrder",
+      "type": "booleanType",
+      "name": "enabledForScheduledOrder",
+      "helpTextResourceId": "enabledForScheduledOrderHelpText",
+      "labelResourceId": "enabledForScheduledOrderLabel",
+      "defaultValue": true
+    },
+    {
+      "id": "enabledForApproval",
+      "type": "booleanType",
+      "name": "enabledForApproval",
+      "helpTextResourceId": "enabledForApprovalHelpText",
+      "labelResourceId": "enabledForApprovalLabel",
+      "defaultValue": true
+    },
+    {
+      "id": "paymentMethodTypes",
+      "type": "multiSelectOptionType",
+      "name": "paymentMethodTypes",
+      "required": true,
+      "helpTextResourceId": "paymentMethodsHelpText",
+      "labelResourceId": "paymentMethodsLabel",
+      "defaultValue": "invoice",
+      "displayAsCheckboxes": true,
+      "options": [
+        {
+          "id": "invoice",
+          "value": "invoice",
+          "labelResourceId": "invoiceLabel"
+        },
+        {
+          "id": "card",
+          "value": "card",
+          "labelResourceId": "cardLabel"
+        }
+      ]
+    },
+    {
+      "id": "includeOrderInWebhookPayload",
+      "type": "booleanType",
+      "name": "includeOrderInWebhookPayload",
+      "helpTextResourceId": "includeOrderHelpText",
+      "labelResourceId": "includeOrderLabel",
+      "defaultValue": true,
+      "public": true
+    }
+  ]
+}

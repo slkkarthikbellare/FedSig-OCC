@@ -1,0 +1,7 @@
+{
+  "provider": "Snappay Payment Provider",
+  "paymentMethodTypes": ["generic"],
+  "transactionTypes": {
+    "generic": ["initiate", "retrieve", "authorization"]
+  }
+}

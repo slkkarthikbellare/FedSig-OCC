@@ -1,0 +1,7 @@
+{
+  "provider": "Invoice Payment Provider",
+  "paymentMethodTypes": ["invoice"],
+  "transactionTypes": {
+    "invoice": ["authorization", "cancel", "refund"]
+  }
+}

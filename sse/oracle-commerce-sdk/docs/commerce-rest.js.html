@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: commerce-rest.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: commerce-rest.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
+ * Oracle Cloud Commerce rest client is designed to connect to an Oracle Cloud Commerce
+ * Server from a Node.js application. Currently, this client supports only Storefront
+ * and admin servers’ public REST APIs and third party application APIs for admin server.
+ */
+
+var http = require('http'),
+		https = require('https');
+
+/**
+ * Returns http|s instance according to the given protocol
+ * @param {String} url
+ * @returns {http|https}
+ */
+function getHttp(url) {
+	'use strict';
+	if (url.startsWith ('http:')) {
+		return http;
+	}
+	return https;
+}
+
+/**
+ * Removes protocol info from the url
+ * @param {String} url
+ * @returns {http|https}
+ */
+function removeProtocol (url) {
+	'use strict';
+	return url.replace(/.*?:\/\//g, '');
+}
+
+
+/**
+ * @class
+ * This constructor function creates CommerceSDK instance.
+ * &lt;p>
+ * @param {Object} configuration required. This configuration object is used to setup
+ *        the hostname and port for the SDK. The applicationlKey is required
+ *        for Third party application
+ *        If the configuration object is not provided, this function will
+ *        throw an error.
+ * @returns {CommerceSDK} The SDK instance
+ */
+function CommerceSDK (configuration) {
+	'use strict';
+	if (!configuration) {
+		throw new Error ('The configuration object is null');
+	}
+	this.hostname = configuration.hostname;
+	this.port = configuration.port;
+	this.applicationKey = configuration.apiKey;
+	//this application context will be updated by the init function and
+	//this will be initialized only once.
+	this.applicationContext = null;
+}
+
+/**
+ * This function strigifies the primitives..
+ * @param {object} primitive
+ * @return {String} returns string value
+ */
+CommerceSDK.stringifyPrimitive = function (primitive) {
+	'use strict';
+	if (primitive) {
+		var primitiveType = typeof primitive;
+		//console.log ('The primitive type is ::' + primitiveType);
+		var primitiveStringValue = null;
+		switch (primitiveType) {
+			case 'boolean' :
+				primitiveStringValue =  primitive ? true : false;
+				break;
+			case 'number' :
+				primitiveStringValue = isFinite (primitive) ? primitive : '';
+				break;
+			case 'string' :
+				primitiveStringValue = primitive;
+				break;
+			default:
+				primitiveStringValue = '';
+		}
+		//console.log ('The primitive stringified value is ::' + primitiveStringValue);
+		return primitiveStringValue;
+	}
+};
+
+/**
+ * This function strigifies the given object
+ * @param {object} The object that needs to be stringified
+ * @returns {String} Stringified version of the query string parameters
+ */
+CommerceSDK.stringifyQueryString = function (object) {
+	'use strict';
+	var separatorSymbol = '&amp;';
+	var equalSymbol = '=';
+
+	if (object) {
+		return Object.keys(object).sort().map(function (key) {
+			//if the key is simple primitive, then encode it. Otherwise if this is an
+			//array, then do the samething for arrays.
+			var keyComponentAsString = encodeURIComponent(CommerceSDK.stringifyPrimitive(key)) + equalSymbol;
+			var keyValue = object[key];
+
+			if (Array.isArray(keyValue)) {
+				return (keyValue.map (function (subValue) {
+					var arrayValue = keyComponentAsString + encodeURIComponent (CommerceSDK.stringifyPrimitive (subValue));
+					//console.log ('The key value pair is :' + arrayValue);
+					return arrayValue;
+				}).join (separatorSymbol) );
+
+			} else {
+				//return key=value
+				var returnValue = keyComponentAsString + encodeURIComponent (CommerceSDK.stringifyPrimitive (keyValue));
+				//console.log ('The key value pair is :' + returnValue);
+				return returnValue;
+			}
+
+		}).join(separatorSymbol);
+	} else {
+		return '';
+	}
+};
+
+/**
+ * This function preserves the access token
+ * for the CommerceSDK instance.
+ * &lt;p>
+ * @param {String} token - The access token needs to be preserved
+ */
+CommerceSDK.prototype.setAccessToken = function (token) {
+	'use strict';
+	this.accessToken = token;
+};
+
+
+/**
+ * This function skips the login if there is no application key. Otherwise
+ * it proceeds with the login.
+ * &lt;p>
+ * @return {Promise} returns a Promise for Asynchronous processing
+ */
+CommerceSDK.prototype.login = function () {
+	'use strict';
+	var self = this; // this instance is used in the callback function..
+
+	var loginPromise = new Promise (
+
+		function (resolve, reject) {
+			CommerceSDK.printDebugMessage ('Executing login promise');
+			if (!self.applicationKey) {
+				CommerceSDK.printDebugMessage ('The end user is trying to use just the public api');
+				resolve(self);
+				//TODO:
+				//Usually after the resolve, the remainder statements should not
+				//be executed. But after resolving the promise, the remainder statements
+				//are executed. Need to figure out why this is happening.
+				//for now return after the resolve to avoid this issue.
+				return;
+			}
+
+			var data = CommerceSDK.stringifyQueryString({
+				grant_type: 'client_credentials' // jshint ignore:line
+			});
+
+			//requestOptions.headers.Authorization = 'Bearer' + accessToken;
+			//store requests does not require any access token.
+			//admin requests require access token.
+			var loginOptions = function (requestOptions) {
+				requestOptions.headers.Authorization = 'Bearer ' + self.applicationKey;
+				requestOptions.headers['Content-Type'] = 'application/x-www-form-urlencoded'; // since this has a special character, we need to use [ instead of .
+			};
+
+			CommerceSDK.printDebugMessage ('Executing request');
+
+			self.request ({url : self.applicationContext + '/v1/login',
+				method : 'post',
+				requestOptions: loginOptions,
+				data : data ,
+				callback : function (err, response) {
+					CommerceSDK.printDebugMessage ('Executing request callback');
+					if (err || response.errorCode || response.error) {
+						CommerceSDK.printError('There was an error while trying to login',  response);
+						reject ( new Error ('There was an error while trying to login', err));
+					}
+					var accessToken = response.access_token; // jshint ignore:line
+					self.setAccessToken (accessToken);
+					CommerceSDK.printDebugMessage('user logged in with access token ::' + self.accessToken);
+					resolve (self);
+				}});
+		});
+	return loginPromise;
+};
+
+/**
+ * This function logs out from the configured server.
+ * @return {Promise} returns a Promise for Asynchronous processing
+ */
+CommerceSDK.prototype.logout = function () {
+	'use strict';
+	var self = this; // this instance is used in the callback function..
+
+	var logoutPromise = new Promise (
+		function (resolve, reject) {
+			CommerceSDK.printDebugMessage ('Executing logout promise with url ::' + self.applicationContext+'/v1/logout');
+			self.post ({url : self.applicationContext+'/v1/logout', data : {},  callback : function (err, response) {
+				if (err || response.errorCode) {
+					CommerceSDK.printError('There was error while loging out ::',  response);
+					reject ( new Error ('There was error while loging out' , err));
+				}
+				if (response.result === true) {
+					self.setAccessToken (null);
+					CommerceSDK.printDebugMessage('user logged out and the accessToken value is ::' + self.accessToken);
+					resolve (self);
+				}
+			}});//end of post
+		}// end of resolver function
+	);
+	return logoutPromise;
+};
+
+/**
+ * This function checks whether the current token in the current CommerceSDK
+ * is valid.
+ * &lt;p>
+ * @return {Promise} returns true/false based on the token validity. If the token is valid
+ * 		   returns true. Otherwise false.
+ *         Also retutuns Promise for asynchronous processing.
+ */
+CommerceSDK.prototype.isValidToken = function () {
+
+	'use strict';
+	var self = this; // this instance is used in the callback function..
+	CommerceSDK.printDebugMessage('Executing isValidToken');
+	var validPromise = new Promise (
+		function (resolve, reject) {
+			CommerceSDK.printDebugMessage ('Executing valid promise');
+			var requestData = JSON.stringify({});
+			self.request ({url : self.applicationContext+'/v1/verify', method: 'post', data : requestData, callback : function (err, response) {
+				//If the auth token is invalid, we will regenerate the token. So we do not need to
+				//reject the promise. If there is a real error, then we will reject the promise.
+				//The initializing code api will re-initialize the authtoken based on the the success flag
+				if (err) {
+					CommerceSDK.printDebugMessage('There was error while trying to validate token :: ' );
+					CommerceSDK.printProperties (response);
+					if (response.errorCode) {
+						resolve (false);
+						CommerceSDK.printError ('There was error while trying to validate token ::', response);
+					} else {
+						reject ( new Error ('There was error trying to validate token ' , err));
+					}
+				}
+				var success = response.success;
+				CommerceSDK.printDebugMessage('Token is validated and its validity is :: ' + success);
+				resolve (success);
+			}});//end of request
+		}// end of resolver function
+	);//end of promise
+	return validPromise;
+};
+
+/**
+ * This function makes the request to the configured server
+ * &lt;p>
+ * @param {object} args - required. The args object contains the following properties:
+ * &lt;UL>
+ * &lt;LI>
+ * url:
+ *	The url config option is used to pass the rest endpoint url.
+ * &lt;/LI>
+ * &lt;LI>
+ * data:
+ *  The data config option is used to pass any input data needed for the endpoint.
+ * &lt;/LI>
+ * &lt;LI>
+ * headers:
+ * 	The headers config option is used to pass in any custom headers such as
+ *  'x-ccasset-language'.  This header is used to pass in any asset language that is
+ *  supported by an asset.
+ * &lt;/LI>
+ * &lt;LI>
+ * callback:
+ *	The callback config option is used to pass a callback function. The callback
+ *  function is called for the error and successful case.
+ * &lt;/LI>
+ * &lt;/UL>
+ */
+CommerceSDK.prototype.request = function (args) {
+	'use strict';
+	//if a method is not provided, then use GET as a default request method.
+	var requestMethod = (args.method) ? args.method.toLowerCase() : 'get';
+	CommerceSDK.printDebugMessage ('The request method is :: ' + requestMethod);
+	var requestData = (args.data) ? args.data : {};
+	CommerceSDK.printDebugMessage ('The request data value is :: ' + requestData);
+	var self = this;
+	var requestModule = getHttp(self.hostname);
+	var requestOptions = {
+		hostname: removeProtocol(self.hostname),
+		port: self.port,
+		path: args.url,
+		method: requestMethod,
+		headers: {
+			'Content-Type' : 'application/json',
+			'x-ccasset-language' : 'en_US'
+		}
+	};
+
+	if (self.accessToken) {
+		requestOptions.headers.Authorization = 'Bearer ' + self.accessToken;
+	}
+
+	if (requestMethod === 'post' || requestMethod === 'put' || requestMethod === 'delete') {
+		requestOptions.headers['Content-Length'] = new Buffer(requestData).length;
+		CommerceSDK.printDebugMessage ('The content type values is :: ' + requestOptions.headers['Content-Type']);
+		CommerceSDK.printDebugMessage ('The content length values is :: ' + requestOptions.headers['Content-Length']);
+	}
+
+	if (args.headers) {
+		//copy headers to request options..
+		for(var prop in args.headers) {
+			requestOptions.headers[prop]=args.headers[prop];
+		}
+	}
+	CommerceSDK.printDebugMessage ('Setting any specical request options.');
+
+	if (args.requestOptions) {
+		args.requestOptions (requestOptions);
+	}
+
+	CommerceSDK.printDebugMessage ('The requestData is :: ' + requestData);
+	CommerceSDK.printDebugMessage ('The requestOptions is :: ' + requestOptions);
+
+	CommerceSDK.printProperties (requestOptions);
+
+	var currentRequest = requestModule.request (requestOptions, function (response) {
+		CommerceSDK.printDebugMessage ('Made request and the response is formulated ::');
+		response.setEncoding('utf8');
+		var responseData = '';
+		response.on('data', function(data) {
+			responseData += data;
+			//console.log('Current data is ::' + responseData);
+		});
+
+		response.on('end', function() {
+			CommerceSDK.printDebugMessage('The request is complete.');
+			var jsonResponseData = null;
+
+			try {
+				if (responseData) {
+					jsonResponseData = JSON.parse(responseData);
+				}
+			} catch (ex) {
+				CommerceSDK.printError ('there was an error while trying to parse the JSON response', ex);
+				throw new Error('Failed to parse response');
+			}
+
+			if (CommerceSDK.isErrorResponse(jsonResponseData) === true) {
+				CommerceSDK.printDebugMessage ('error is true');
+				CommerceSDK.printError ('There was an error in the response.', jsonResponseData);
+				args.callback ('There was an error in the response.', jsonResponseData);
+			} else {
+				CommerceSDK.printDebugMessage ('error is false');
+				args.callback (null, jsonResponseData);
+			}
+		});
+
+		response.on ('error', function () {
+			CommerceSDK.printDebugMessage ('There is an error with the request');
+			CommerceSDK.printError ('There was an error while trying process request');
+			throw new Error('There was an error while trying process request');
+		});
+
+	});
+
+	if (requestMethod === 'post' || requestMethod === 'put' || requestMethod === 'delete') {
+		CommerceSDK.printDebugMessage ('Writing request data.');
+		currentRequest.write(requestData);
+	}
+
+	currentRequest.end();
+};
+
+/**
+ * This function makes the get request.
+ * @param {object} urlOptions - required. The url options required to make the request
+ * @see CommerceSDK#request method for url options properties.
+ * @see CommerceSDK#init option for initializing the CommerceSDK instance.
+ */
+CommerceSDK.prototype.get = function (urlOptions) {
+	//url, method, data, header, callback
+	'use strict';
+	//TODO add validation for urlOptions
+	if (!urlOptions) {
+		throw new Error ('The url options cannot be null');
+	}
+
+	var data = urlOptions.data;
+
+	if (data) {
+		var appendChar = urlOptions.url.indexOf('?' === -1) ? '?' : '&amp;';
+		urlOptions.url = 	urlOptions.url + appendChar + CommerceSDK.stringifyQueryString(data);
+		urlOptions.data = null;
+	}
+	var self = this;
+	urlOptions.method = 'GET';
+	var initPromise = self.init(urlOptions.url);
+	initPromise.catch (function (err) {
+		CommerceSDK.printError ('There was an error while trying to execute get request ::' , err);
+		urlOptions.callback('There was an error while trying to execute get request.', err);
+		return;
+	});
+
+	initPromise.then (function (success) {
+		if (success === true) {
+			self.request(urlOptions);
+		}
+	});
+};
+
+/**
+ * This function makes the post request.
+ * @param {object} urlOptions - required. The url options required to make the request
+ * @see CommerceSDK#request method for url options properties.
+ * @see CommerceSDK#init option for initializing the CommerceSDK instance.
+ */
+CommerceSDK.prototype.post = function (urlOptions) {
+	'use strict';
+	var self = this;
+	if (!urlOptions) {
+		throw new Error ('The url options cannot be null');
+	}
+
+	if (!urlOptions.data) {
+		urlOptions.data = {};
+	}
+	urlOptions.method = 'POST';
+	var initPromise = self.init(urlOptions.url);
+	initPromise.catch (function (err) {
+		CommerceSDK.printError ('There was an error while trying to execute post' , err);
+		urlOptions.callback(new Error ('There was an error while trying to execute post request ', err), null);
+		return;
+	});
+
+	initPromise.then (function (success) {
+		if (success === true) {
+			urlOptions.data = JSON.stringify(urlOptions.data);
+
+			self.request (urlOptions);
+		}
+	});
+};
+
+/**
+ * This function makes the put request.
+ * @param {object} urlOptions - required. The url options required to make the request
+ * @see CommerceSDK#request method for url options properties.
+ * @see CommerceSDK#init option for initializing the CommerceSDK instance.
+ */
+CommerceSDK.prototype.put = function (urlOptions) {
+	'use strict';
+	var self = this;
+	if (!urlOptions) {
+		throw new Error ('The url options cannot be null');
+	}
+
+	if (!urlOptions.data) {
+		urlOptions.data = {};
+	}
+	urlOptions.method = 'PUT';
+	var initPromise = self.init(urlOptions.url);
+	initPromise.catch (function (err) {
+		CommerceSDK.printError ('There was an error while trying to execute put' ,  err);
+		urlOptions.callback(new Error ('There was an error while trying to execute put request ', err), null);
+		return;
+	});
+
+	initPromise.then (function (success) {
+		if (success === true) {
+			urlOptions.data = JSON.stringify(urlOptions.data);
+			self.request (urlOptions);
+		}
+	});
+};
+
+/**
+ * This function makes the delete request.
+ * @param {object} urlOptions - required. The url options required to make the request
+ * @see CommerceSDK#request method for url options properties.
+ * @see CommerceSDK#init option for initializing the CommerceSDK instance.
+ */
+CommerceSDK.prototype.delete = function (urlOptions) {
+	'use strict';
+	var self = this;
+	if (!urlOptions) {
+		throw new Error ('The url options cannot be null');
+	}
+
+	if (!urlOptions.data) {
+		urlOptions.data = {};
+	}
+	urlOptions.method = 'DELETE';
+	var initPromise = self.init(urlOptions.url);
+	initPromise.catch (function (err) {
+		CommerceSDK.printError ('There was an error while trying to execute delete' , err);
+		urlOptions.callback(new Error ('There was an error while trying to execute delete request ', err), null);
+		return;
+	});
+
+	initPromise.then (function (success) {
+		if (success === true) {
+			urlOptions.data = JSON.stringify(urlOptions.data);
+			self.request (urlOptions);
+		}
+	});
+};
+
+/**
+ * This function initializes the SDK.
+ * &lt;p>
+ * If the SDK is configured as a public SDK, this function skips the initialization.
+ * Alternatively if the SDK is configured as a third party application, then this SDK
+ * login for the first time and for the remainder of the time, it checks the access token.
+ * if the access token is invalid, the SDK refreshes or re-login based on the application key.
+ * otherwise continues with the desired request.
+ * &lt;p>
+ * @param {String} endpoint The rest end point url
+ * @return returns Promise for asynchronous processing
+ *         Once the prmoise is resolved, this function returns
+ *         either true or false based on the successful initialization.
+ *         If the initialization is successful, returns true;false otherwise
+ */
+CommerceSDK.prototype.init = function (endpoint) {
+	'use strict';
+	var self = this;
+	CommerceSDK.printDebugMessage('Executing init');
+	//take the context from the endpoint
+	//if the applicationKey exists, then check authToken?
+	//if auth_token exists, is it valid, if it is not valid, relogin and
+	//get the token and set it in the object.
+	//Then make the request.
+	//if the token is valid, then proceed. If not relogin to
+
+	var initPromise = new Promise (
+		function (resolve, reject) {
+			CommerceSDK.printDebugMessage ('Executing init promise');
+
+			if (!self.applicationKey) {
+				CommerceSDK.printDebugMessage ('Init : SDK is setup as a public api.');
+				resolve (true);
+			}
+
+			//if the application context is null, then parse the endpoint url and
+			//set the application context.
+			if (!self.applicationContext) {
+				var endpointParts =  endpoint.split('/');
+				CommerceSDK.printDebugMessage ('Init : Endpoint parts :: ' + endpointParts);
+				self.applicationContext = '/'+endpointParts[1];
+				CommerceSDK.printDebugMessage ('Init : Setting applicaion context.');
+			}
+
+			CommerceSDK.printDebugMessage ('Init : access token value is :: ' + self.accessToken);
+			if (!self.accessToken) {
+				var loginPromise = self.login();
+				loginPromise.catch (function (err) {
+					CommerceSDK.printError ('There was an error while trying to initialize ', err);
+					reject(false);
+				});
+
+				loginPromise.then (function (lp) { // jshint ignore:line
+					CommerceSDK.printDebugMessage ('Init : Auth token does not exist. Login to setup auth token.');
+					resolve (true);
+				});
+			} else {
+				var tokenPromise = self.isValidToken();
+				tokenPromise.catch (function (err) {
+					CommerceSDK.printError ('There was an error while trying to initialize ' , err);
+
+					reject(false);
+				});
+
+				tokenPromise.then (function (success) {
+					if (success === true) {
+						CommerceSDK.printDebugMessage ('Init : Auth token is valid. Do nothing!!!');
+						resolve (true);
+					} else {
+						var loginPromise = self.login();
+						loginPromise.catch (function (err) {
+							CommerceSDK.printError ('There was an error while trying to initialize ', err);
+							reject(false);
+						});
+
+						loginPromise.then (function (lp) {// jshint ignore:line
+							CommerceSDK.printDebugMessage ('Init : Auth token is invalid. login again!!!');
+							resolve (true);
+						});
+					}
+				});
+			}
+		});
+	return initPromise;
+
+}; // end of init
+
+/**
+ * Utility function to find out whether response contains an error or not
+ * @param JSON response
+ * @returns {boolean} return true if this is an error response;otherwise false.
+ */
+CommerceSDK.isErrorResponse = function (response) {
+	'use strict';
+	if (response) {
+		if (response.errorCode || response.error) {
+			return true;
+		}
+	}
+	return false;
+};
+
+/**
+ * Utility function to log debug message to the logger. By default this logs to the
+ * console.
+ */
+CommerceSDK.printDebugMessage = function (message) {
+	'use strict';
+	console.log (message);
+};
+
+/**
+ * Utility function to log error message and object to the logger. By default this logs to the
+ * console.
+ */
+CommerceSDK.printError = function (message, error) {
+	'use strict';
+	if (message) {
+		console.log (message);
+	}
+
+	if (error) {
+		CommerceSDK.printProperties (error);
+	}
+};
+
+/**
+ * Utility function to print out object properties.
+ * @param obj The object to be printed
+ * @return Prints out to the logger
+ */
+CommerceSDK.printProperties = function (obj) {
+	'use strict';
+	var propValue = null;
+	for(var propName in obj) {
+		propValue = obj[propName];
+		console.log(propName,propValue);
+	}
+};
+
+
+module.exports = CommerceSDK;
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Classes</h3><ul><li><a href="CommerceSDK.html">CommerceSDK</a></li></ul><h3>Global</h3><ul><li><a href="global.html#getHttp">getHttp</a></li><li><a href="global.html#http">http</a></li><li><a href="global.html#removeProtocol">removeProtocol</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Fri Apr 28 2017 14:22:09 GMT-0400 (Eastern Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

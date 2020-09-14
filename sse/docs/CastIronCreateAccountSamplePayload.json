@@ -1,0 +1,61 @@
+Json Request
+
+{"Address":
+[ 
+{
+   "siteID":"100001",
+   "FirstName":"Mike",
+   "LastName":"Martuzzo",
+   "CompanyName":"Heavy Duty",
+   "Address1": "2808 Flint Rock Drive",
+   "Address2": "123",
+   "City": "Fort Worth",
+   "StateProvince": "TX",
+   "County": "Kane",
+   "Country": "US",
+   "ZipPostalCode": "76131",
+   "PhoneNumber": "555-555-5555",
+   "PhoneExtension": "555",
+   "EmailAddress": "mmartuzzo@federalsignal.com",
+   "Branch": "true",
+   "JDECustomerNumber":123456,
+  "Company": "04200",
+   "AddressID": 12,
+   "IsBillingAddress":"true",
+   "IsShippingAddress":"false",
+   "JDECurrency": "USD",
+  "OrganizationID":"12345"
+}
+]
+}
+========================================================================
+JSON Response
+
+{"Address":
+[ 
+{
+   "AddressID": 12,
+   "JDECustomerNumber":123456,
+   "JDEAddressType":"CC",
+   "JDEAddressSubType":"B",
+   "JDETaxRateArea":"V1234567",
+   "JDEPaymentTerms": "CCP",
+   "JDETradeDiscount":"WEB",
+   "JDEVertexCode":"1234"
+},
+{
+   "AddressID": 12,
+   "JDECustomerNumber":123456,
+   "JDEAddressType":"CS",
+   "JDEAddressSubType":"S",
+   "JDETaxRateArea":"V1234567",
+   "JDEPaymentTerms": "CCP",
+   "JDETradeDiscount":"WEB",
+   "JDEVertexCode":"1234"
+}
+]
+}
+
+
+
+Notes:

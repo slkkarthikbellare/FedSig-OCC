@@ -1,0 +1,6 @@
+ExternalPriceSSE
+Endpoint- /ccadmin/v1/extensionEnvironmentVariables
+{
+"EXTERNAL_PRICE_URL":"https://castirontest.federalsignal.com/getprice",
+"SEND_MOCK_EXTERNAL_PRICE":"false"
+}

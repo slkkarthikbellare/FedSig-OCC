@@ -1,0 +1,33 @@
+{
+  "name": "externalPricesSSE",
+  "version": "0.0.1",
+  "author": "Oracle Inc.",
+  "config": {
+    "port": "3000"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "config": "latest",
+    "dateformat": "latest",
+    "etag": "^1.8.1",
+    "https-proxy-agent": "^4.0.0"
+  },
+  "description": "Server side extension to fetch prices from JDE.",
+  "devDependencies": {
+    "body-parser": "latest",
+    "express": "latest",
+    "winston": "latest",
+    "nconf": "^0.10.0",
+    "dotenv": "^8.2.0",
+    "nodemon": "^2.0.2"
+  },
+  "main": "/app/index.js",
+  "publicUrls": [
+    "/ccstorex/custom/v1/getExternalPrice"
+  ],
+  "scripts": {
+    "lint": "jshint ./app || rem",
+    "start": "nodemon index.js",
+    "test": "gulp test"
+  }
+}

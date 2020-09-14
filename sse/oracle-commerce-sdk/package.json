@@ -1,0 +1,21 @@
+{
+  "author": "Oracle Cloud Commerce Team",
+  "name": "occsrest",
+  "description": "Oracle Cloud Commerce Rest SDK",
+  "version": "0.1.0",
+  "repository": {
+    "url": ""
+  },
+  "main": "./lib/commerce-rest.js",
+  "dependencies": {
+    "debug": "^4.1.1"
+  },
+  "engines": {
+    "node": "*"
+  },
+  "devDependencies": {
+    "gulp-jasmine-node": "^1.0.6",
+    "gulp-shell": "^0.5.2",
+    "jsdoc": "^3.4.0"
+  }
+}

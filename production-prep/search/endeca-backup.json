@@ -1,0 +1,1047 @@
+{
+    "ecr:type": "attributes-owner-folder",
+    "ecr:createDate": "2020-05-01T18:19:57.630264Z",
+    "ecr:lastModifiedBy": "interserver",
+    "ecr:lastModified": "2020-05-01T18:19:57.630264Z",
+    "product.analytics.quantitySold30d": {
+        "propertyDataType": "ALPHA",
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.705834Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.705834Z"
+    },
+    "product.listPrice": {
+        "propertyDataType": "DOUBLE",
+        "context": [
+            "priceGroup"
+        ],
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.844517Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.844517Z"
+    },
+    "product.siteId": {
+        "sourcePropertyNames": [
+            "product.siteId"
+        ],
+        "isAutogen": true,
+        "ecr:type": "dimension",
+        "ecr:createDate": "2020-05-01T18:19:57.884332Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.884332Z"
+    },
+    "product.custRatingCount": {
+        "propertyDataType": "INTEGER",
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.939888Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.939888Z"
+    },
+    "sku.url": {
+        "propertyDataType": "ALPHA",
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.826908Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.826908Z"
+    },
+    "product.seoKeywords": {
+        "propertyDataType": "ALPHA",
+        "context": [
+            "locale"
+        ],
+        "isRecordSearchEnabled": true,
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.748238Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.748238Z"
+    },
+    "sku.active": {
+        "propertyDataType": "INTEGER",
+        "isRecordFilterable": true,
+        "isRecordSearchEnabled": true,
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.937124Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.937124Z"
+    },
+    "sku.x_fullWhite": {
+        "multiSelectType": "OR",
+        "context": [
+            "locale"
+        ],
+        "sourcePropertyNames": [
+            "sku-LightBars1.x_fullWhite",
+            "sku-LightBars2.x_fullWhite"
+        ],
+        "isAutogen": true,
+        "isRecordSearchEnabled": true,
+        "ecr:type": "dimension",
+        "ecr:createDate": "2020-05-01T18:19:57.838958Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.838958Z"
+    },
+    "product.category.nonNavigable": {
+        "isWildcardEnabledInRecordSearch": true,
+        "displayOrder": 1,
+        "context": [
+            "locale"
+        ],
+        "sourcePropertyNames": [
+            "product.parentCategory.nonNav.id"
+        ],
+        "isRecordSearchEnabled": true,
+        "ecr:type": "dimension",
+        "ecr:createDate": "2020-05-01T18:19:57.867243Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.867243Z"
+    },
+    "sku.wholesalePrice": {
+        "propertyDataType": "DOUBLE",
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.889826Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.889826Z"
+    },
+    "sku.analytics.availabilityStatus": {
+        "sourcePropertyNames": [
+            "sku.analytics.availabilityStatus"
+        ],
+        "isAutogen": true,
+        "ecr:type": "dimension",
+        "ecr:createDate": "2020-05-01T18:19:57.870198Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.870198Z"
+    },
+    "sku.x_colorOption": {
+        "multiSelectType": "OR",
+        "context": [
+            "locale"
+        ],
+        "sourcePropertyNames": [
+            "sku-Beacons.x_colorOption"
+        ],
+        "isAutogen": true,
+        "isRecordSearchEnabled": true,
+        "ecr:type": "dimension",
+        "ecr:createDate": "2020-05-01T18:19:57.774033Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.774033Z"
+    },
+    "product.notForIndividualSale": {
+        "propertyDataType": "INTEGER",
+        "isRecordSearchEnabled": true,
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.864035Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.864035Z"
+    },
+    "product.x_lightSource": {
+        "multiSelectType": "NONE",
+        "sourcePropertyNames": [
+            "VisualSignal.x_lightSource"
+        ],
+        "isAutogen": true,
+        "ecr:type": "dimension",
+        "ecr:createDate": "2020-05-01T18:19:57.841556Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.841556Z"
+    },
+    "product.mediumImageURLs": {
+        "propertyDataType": "ALPHA",
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.928586Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.928586Z"
+    },
+    "sku.priceGroups": {
+        "propertyDataType": "ALPHA",
+        "isRecordFilterable": true,
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.770906Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.770906Z"
+    },
+    "sku.displayName": {
+        "propertyDataType": "ALPHA",
+        "context": [
+            "locale"
+        ],
+        "isRecordSearchEnabled": true,
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.693655Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.693655Z"
+    },
+    "sku.thumbnailImage.url": {
+        "propertyDataType": "ALPHA",
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.767990Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.767990Z"
+    },
+    "sku.availabilityStatus": {
+        "propertyDataType": "ALPHA",
+        "isRecordFilterable": true,
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.671720Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.671720Z"
+    },
+    "product.category": {
+        "isWildcardEnabledInRecordSearch": true,
+        "displayOrder": 1,
+        "context": [
+            "locale"
+        ],
+        "sourcePropertyNames": [
+            "product.parentCategory.id"
+        ],
+        "isRecordSearchEnabled": true,
+        "ecr:type": "dimension",
+        "ecr:createDate": "2020-05-01T18:19:57.665896Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.665896Z"
+    },
+    "product.analytics.factorViewCount30d": {
+        "propertyDataType": "DOUBLE",
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.653782Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.653782Z"
+    },
+    "sku.salePrice": {
+        "propertyDataType": "DOUBLE",
+        "context": [
+            "priceGroup"
+        ],
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.745487Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.745487Z"
+    },
+    "product.x_certificationListing": {
+        "multiSelectType": "NONE",
+        "sourcePropertyNames": [
+            "product.x_certificationListing"
+        ],
+        "isAutogen": true,
+        "ecr:type": "dimension",
+        "ecr:createDate": "2020-05-01T18:19:57.685612Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.685612Z"
+    },
+    "sku.siteId": {
+        "sourcePropertyNames": [
+            "sku.siteId"
+        ],
+        "isAutogen": true,
+        "ecr:type": "dimension",
+        "ecr:createDate": "2020-05-01T18:19:57.849719Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.849719Z"
+    },
+    "product.configurable": {
+        "propertyDataType": "INTEGER",
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.736720Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.736720Z"
+    },
+    "product.analytics.orderCount30d": {
+        "propertyDataType": "ALPHA",
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.797019Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.797019Z"
+    },
+    "product.primaryMediumImageURL": {
+        "propertyDataType": "ALPHA",
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.873147Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.873147Z"
+    },
+    "sku.creationDate": {
+        "propertyDataType": "DATETIME",
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.942704Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.942704Z"
+    },
+    "product.productImagesMetadata": {
+        "propertyDataType": "ALPHA",
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.800023Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.800023Z"
+    },
+    "product.x_voltage": {
+        "multiSelectType": "OR",
+        "sourcePropertyNames": [
+            "product.x_voltage"
+        ],
+        "isAutogen": true,
+        "isRecordSearchEnabled": true,
+        "ecr:type": "dimension",
+        "ecr:createDate": "2020-05-01T18:19:57.820971Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.820971Z"
+    },
+    "parentCategory.keywords": {
+        "propertyDataType": "ALPHA",
+        "isRecordSearchEnabled": true,
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.648125Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.648125Z"
+    },
+    "sku.activePrice": {
+        "propertyDataType": "DOUBLE",
+        "context": [
+            "priceGroup"
+        ],
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.641559Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.641559Z"
+    },
+    "product.fullImageURLs": {
+        "propertyDataType": "ALPHA",
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.794002Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.794002Z"
+    },
+    "sku.x_lightBarLengthIn": {
+        "multiSelectType": "OR",
+        "context": [
+            "locale"
+        ],
+        "sourcePropertyNames": [
+            "sku-LightBars1.x_lightBarLengthIn",
+            "sku-LightBars2.x_lightBarLengthIn"
+        ],
+        "isAutogen": true,
+        "isRecordSearchEnabled": true,
+        "ecr:type": "dimension",
+        "ecr:createDate": "2020-05-01T18:19:57.742614Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.742614Z"
+    },
+    "sku.listingSmallImageURL": {
+        "propertyDataType": "ALPHA",
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.638389Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.638389Z"
+    },
+    "sku.listingId": {
+        "propertyDataType": "ALPHA",
+        "isRollupKey": true,
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.733641Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.733641Z"
+    },
+    "sku.x_weatherTightConnector": {
+        "multiSelectType": "OR",
+        "context": [
+            "locale"
+        ],
+        "sourcePropertyNames": [
+            "sku-LightBars1.x_weatherTightConnector",
+            "sku-LightBars2.x_weatherTightConnector"
+        ],
+        "isAutogen": true,
+        "isRecordSearchEnabled": true,
+        "ecr:type": "dimension",
+        "ecr:createDate": "2020-05-01T18:19:57.948287Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.948287Z"
+    },
+    "sku.x_profile": {
+        "multiSelectType": "OR",
+        "context": [
+            "locale"
+        ],
+        "sourcePropertyNames": [
+            "sku-Beacons.x_profile"
+        ],
+        "isAutogen": true,
+        "isRecordSearchEnabled": true,
+        "ecr:type": "dimension",
+        "ecr:createDate": "2020-05-01T18:19:57.759382Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.759382Z"
+    },
+    "product.sourceImageURLs": {
+        "propertyDataType": "ALPHA",
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.806706Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.806706Z"
+    },
+    "sku.startDate": {
+        "propertyDataType": "DATETIME",
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.809657Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.809657Z"
+    },
+    "product.primarySmallImageURL": {
+        "propertyDataType": "ALPHA",
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.802764Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.802764Z"
+    },
+    "product.active": {
+        "propertyDataType": "INTEGER",
+        "isRecordSearchEnabled": true,
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.875832Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.875832Z"
+    },
+    "product.largeImageURLs": {
+        "propertyDataType": "ALPHA",
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.785090Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.785090Z"
+    },
+    "sku.baseUrl": {
+        "propertyDataType": "ALPHA",
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.765083Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.765083Z"
+    },
+    "sku.repositoryId": {
+        "propertyDataType": "ALPHA",
+        "isRecordSearchEnabled": true,
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.677107Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.677107Z"
+    },
+    "product.displayName": {
+        "isWildcardEnabledInRecordSearch": true,
+        "propertyDataType": "ALPHA",
+        "context": [
+            "locale"
+        ],
+        "isRecordSearchEnabled": true,
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.739791Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.739791Z"
+    },
+    "sku.maxActivePrice": {
+        "derivedPropertySource": "sku.activePrice",
+        "derivedPropertyFunction": "MAX",
+        "ecr:type": "derived-property",
+        "ecr:createDate": "2020-05-01T18:19:57.708445Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.708445Z"
+    },
+    "product.route": {
+        "propertyDataType": "ALPHA",
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.782392Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.782392Z"
+    },
+    "product.baseUrl": {
+        "propertyDataType": "ALPHA",
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.753598Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.753598Z"
+    },
+    "product.smallImageURLs": {
+        "propertyDataType": "ALPHA",
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.950818Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.950818Z"
+    },
+    "sku.x_operatingVoltage": {
+        "multiSelectType": "OR",
+        "context": [
+            "locale"
+        ],
+        "sourcePropertyNames": [
+            "sku-VisualSignal.x_operatingVoltage",
+            "sku-AudibleSignal.x_operatingVoltage"
+        ],
+        "isAutogen": true,
+        "isRecordSearchEnabled": true,
+        "ecr:type": "dimension",
+        "ecr:createDate": "2020-05-01T18:19:57.699637Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.699637Z"
+    },
+    "product.longDescription": {
+        "propertyDataType": "ALPHA",
+        "context": [
+            "locale"
+        ],
+        "isRecordSearchEnabled": true,
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.812497Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.812497Z"
+    },
+    "product.primaryFullImageURL": {
+        "propertyDataType": "ALPHA",
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.696628Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.696628Z"
+    },
+    "product.analytics.viewCount30d": {
+        "propertyDataType": "ALPHA",
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.904899Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.904899Z"
+    },
+    "product.primaryLargeImageURL": {
+        "propertyDataType": "ALPHA",
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.756557Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.756557Z"
+    },
+    "sku.description": {
+        "propertyDataType": "ALPHA",
+        "isRecordSearchEnabled": true,
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.923089Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.923089Z"
+    },
+    "sku.listingLargeImageURL": {
+        "propertyDataType": "ALPHA",
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.713770Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.713770Z"
+    },
+    "sku.styleProperty": {
+        "propertyDataType": "ALPHA",
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.920552Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.920552Z"
+    },
+    "product.analytics.factorQuantitySold30d": {
+        "propertyDataType": "DOUBLE",
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.722485Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.722485Z"
+    },
+    "product.dateAvailable": {
+        "propertyDataType": "DATETIME",
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.659647Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.659647Z"
+    },
+    "product.creationDate": {
+        "propertyDataType": "DATETIME",
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.830053Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.830053Z"
+    },
+    "product.startDate": {
+        "propertyDataType": "DATETIME",
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.790660Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.790660Z"
+    },
+    "sku.x_mount": {
+        "multiSelectType": "OR",
+        "context": [
+            "locale"
+        ],
+        "sourcePropertyNames": [
+            "sku-Beacons.x_mount"
+        ],
+        "isAutogen": true,
+        "isRecordSearchEnabled": true,
+        "ecr:type": "dimension",
+        "ecr:createDate": "2020-05-01T18:19:57.847210Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.847210Z"
+    },
+    "product.primaryThumbImageURL": {
+        "propertyDataType": "ALPHA",
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.901794Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.901794Z"
+    },
+    "product.x_shippingWeightLbs": {
+        "multiSelectType": "OR",
+        "sourcePropertyNames": [
+            "product.x_shippingWeightLbs"
+        ],
+        "isAutogen": true,
+        "isRecordSearchEnabled": true,
+        "ecr:type": "dimension",
+        "ecr:createDate": "2020-05-01T18:19:57.931393Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.931393Z"
+    },
+    "sku.x_lensColor": {
+        "multiSelectType": "OR",
+        "context": [
+            "locale"
+        ],
+        "sourcePropertyNames": [
+            "sku-VisualSignal.x_lensColor"
+        ],
+        "isAutogen": true,
+        "isRecordSearchEnabled": true,
+        "ecr:type": "dimension",
+        "ecr:createDate": "2020-05-01T18:19:57.916976Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.916976Z"
+    },
+    "parentCategory.displayName": {
+        "propertyDataType": "ALPHA",
+        "context": [
+            "locale"
+        ],
+        "isRecordSearchEnabled": true,
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.762218Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.762218Z"
+    },
+    "sku.onSale": {
+        "propertyDataType": "INTEGER",
+        "isRecordSearchEnabled": true,
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.887276Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.887276Z"
+    },
+    "sku.endDate": {
+        "propertyDataType": "DATETIME",
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.669049Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.669049Z"
+    },
+    "sku.listingThumbImageURL": {
+        "propertyDataType": "ALPHA",
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.907904Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.907904Z"
+    },
+    "product.url": {
+        "propertyDataType": "ALPHA",
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.934270Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.934270Z"
+    },
+    "record.type": {
+        "propertyDataType": "ALPHA",
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.779415Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.779415Z"
+    },
+    "product.primaryImageAltText": {
+        "propertyDataType": "ALPHA",
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.662640Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.662640Z"
+    },
+    "product.endDate": {
+        "propertyDataType": "DATETIME",
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.858554Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.858554Z"
+    },
+    "sku.listingFullImageURL": {
+        "propertyDataType": "ALPHA",
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.898751Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.898751Z"
+    },
+    "product.keywords": {
+        "propertyDataType": "ALPHA",
+        "context": [
+            "locale"
+        ],
+        "isRecordSearchEnabled": true,
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.815384Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.815384Z"
+    },
+    "sku.x_photocell": {
+        "multiSelectType": "OR",
+        "context": [
+            "locale"
+        ],
+        "sourcePropertyNames": [
+            "sku-Beacons.x_photocell"
+        ],
+        "isAutogen": true,
+        "isRecordSearchEnabled": true,
+        "ecr:type": "dimension",
+        "ecr:createDate": "2020-05-01T18:19:57.716684Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.716684Z"
+    },
+    "product.priceRange": {
+        "rangeComparisonType": "FLOAT",
+        "context": [
+            "priceGroup"
+        ],
+        "displayOrder": 2,
+        "sourcePropertyNames": [
+            "product.activePrice"
+        ],
+        "ecr:type": "dimension",
+        "ecr:createDate": "2020-05-01T18:19:57.881671Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.881671Z"
+    },
+    "product.repositoryId": {
+        "propertyDataType": "ALPHA",
+        "isRollupKey": true,
+        "isRecordSearchEnabled": true,
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.787817Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.787817Z"
+    },
+    "sku.listingMediumImageURL": {
+        "propertyDataType": "ALPHA",
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.679805Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.679805Z"
+    },
+    "product.x_environmentalRating": {
+        "multiSelectType": "NONE",
+        "sourcePropertyNames": [
+            "product.x_environmentalRating"
+        ],
+        "isAutogen": true,
+        "ecr:type": "dimension",
+        "ecr:createDate": "2020-05-01T18:19:57.688323Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.688323Z"
+    },
+    "sku.x_lightBarFloodLocation": {
+        "multiSelectType": "OR",
+        "context": [
+            "locale"
+        ],
+        "sourcePropertyNames": [
+            "sku-LightBars2.x_lightBarFloodLocation"
+        ],
+        "isAutogen": true,
+        "isRecordSearchEnabled": true,
+        "ecr:type": "dimension",
+        "ecr:createDate": "2020-05-01T18:19:57.644517Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.644517Z"
+    },
+    "sku.largeImage.url": {
+        "propertyDataType": "ALPHA",
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.855619Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.855619Z"
+    },
+    "sku.listPrice": {
+        "propertyDataType": "DOUBLE",
+        "context": [
+            "priceGroup"
+        ],
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.861457Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.861457Z"
+    },
+    "product.seoTitle": {
+        "propertyDataType": "ALPHA",
+        "context": [
+            "locale"
+        ],
+        "isRecordSearchEnabled": true,
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.750856Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.750856Z"
+    },
+    "sku.smallImage.url": {
+        "propertyDataType": "ALPHA",
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.910846Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.910846Z"
+    },
+    "product.catalogId": {
+        "propertyDataType": "ALPHA",
+        "isRecordFilterable": true,
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.925757Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.925757Z"
+    },
+    "sku.quantity": {
+        "propertyDataType": "INTEGER",
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.832996Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.832996Z"
+    },
+    "sku.x_lightBarMount": {
+        "multiSelectType": "OR",
+        "context": [
+            "locale"
+        ],
+        "sourcePropertyNames": [
+            "sku-LightBars1.x_lightBarMount",
+            "sku-LightBars2.x_lightBarMount"
+        ],
+        "isAutogen": true,
+        "isRecordSearchEnabled": true,
+        "ecr:type": "dimension",
+        "ecr:createDate": "2020-05-01T18:19:57.776674Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.776674Z"
+    },
+    "sku.manufacturer_part_number": {
+        "propertyDataType": "ALPHA",
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.650951Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.650951Z"
+    },
+    "product.daysAvailable": {
+        "propertyDataType": "INTEGER",
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.635174Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.635174Z"
+    },
+    "product.description": {
+        "propertyDataType": "ALPHA",
+        "context": [
+            "locale"
+        ],
+        "isRecordSearchEnabled": true,
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.895567Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.895567Z"
+    },
+    "sku.x_mountingDependent": {
+        "multiSelectType": "OR",
+        "context": [
+            "locale"
+        ],
+        "sourcePropertyNames": [
+            "sku-VisualSignal.x_mountingDependent",
+            "sku-AudibleSignal.x_mountingDependent"
+        ],
+        "isAutogen": true,
+        "isRecordSearchEnabled": true,
+        "ecr:type": "dimension",
+        "ecr:createDate": "2020-05-01T18:19:57.892647Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.892647Z"
+    },
+    "sku.unitOfMeasure": {
+        "propertyDataType": "ALPHA",
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.913907Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.913907Z"
+    },
+    "sku.x_mountingStyle": {
+        "multiSelectType": "OR",
+        "context": [
+            "locale"
+        ],
+        "sourcePropertyNames": [
+            "sku-VisualSignal.x_mountingStyle"
+        ],
+        "isAutogen": true,
+        "isRecordSearchEnabled": true,
+        "ecr:type": "dimension",
+        "ecr:createDate": "2020-05-01T18:19:57.818182Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.818182Z"
+    },
+    "product.seoUrlSlug": {
+        "propertyDataType": "ALPHA",
+        "context": [
+            "locale"
+        ],
+        "isRecordSearchEnabled": true,
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.730965Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.730965Z"
+    },
+    "product.seoDescription": {
+        "propertyDataType": "ALPHA",
+        "context": [
+            "locale"
+        ],
+        "isRecordSearchEnabled": true,
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.656834Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.656834Z"
+    },
+    "sku.analytics.onSale": {
+        "isAutogen": true,
+        "isRecordSearchEnabled": false,
+        "ecr:type": "dimension",
+        "ecr:createDate": "2020-05-01T18:19:57.823772Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.823772Z"
+    },
+    "product.shippingSurcharge": {
+        "propertyDataType": "DOUBLE",
+        "context": [
+            "priceGroup"
+        ],
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.719827Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.719827Z"
+    },
+    "product.primaryImageTitle": {
+        "propertyDataType": "ALPHA",
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.682618Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.682618Z"
+    },
+    "product.thumbImageURLs": {
+        "propertyDataType": "ALPHA",
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.711137Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.711137Z"
+    },
+    "product.analytics.productType": {
+        "sourcePropertyNames": [
+            "product.analytics.productType"
+        ],
+        "isAutogen": true,
+        "ecr:type": "dimension",
+        "ecr:createDate": "2020-05-01T18:19:57.728299Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.728299Z"
+    },
+    "sku.x_approval": {
+        "multiSelectType": "OR",
+        "context": [
+            "locale"
+        ],
+        "sourcePropertyNames": [
+            "sku-Beacons.x_approval"
+        ],
+        "isAutogen": true,
+        "isRecordSearchEnabled": true,
+        "ecr:type": "dimension",
+        "ecr:createDate": "2020-05-01T18:19:57.878583Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.878583Z"
+    },
+    "product.avgCustRating": {
+        "propertyDataType": "DOUBLE",
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.852567Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.852567Z"
+    },
+    "sku.minActivePrice": {
+        "derivedPropertySource": "sku.activePrice",
+        "derivedPropertyFunction": "MIN",
+        "ecr:type": "derived-property",
+        "ecr:createDate": "2020-05-01T18:19:57.702806Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.702806Z"
+    },
+    "product.x_enclosureRating": {
+        "multiSelectType": "OR",
+        "sourcePropertyNames": [
+            "product.x_enclosureRating"
+        ],
+        "isAutogen": true,
+        "ecr:type": "dimension",
+        "ecr:createDate": "2020-05-01T18:19:57.674402Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.674402Z"
+    },
+    "product.salePrice": {
+        "propertyDataType": "DOUBLE",
+        "context": [
+            "priceGroup"
+        ],
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.836030Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.836030Z"
+    },
+    "sku.listingOptionIndex": {
+        "propertyDataType": "INTEGER",
+        "ecr:type": "property",
+        "ecr:createDate": "2020-05-01T18:19:57.945679Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.945679Z"
+    },
+    "sku.x_domeColor": {
+        "multiSelectType": "OR",
+        "context": [
+            "locale"
+        ],
+        "sourcePropertyNames": [
+            "sku-Beacons.x_domeColor"
+        ],
+        "isAutogen": true,
+        "isRecordSearchEnabled": true,
+        "ecr:type": "dimension",
+        "ecr:createDate": "2020-05-01T18:19:57.725294Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.725294Z"
+    },
+    "sku.x_bodyColor": {
+        "multiSelectType": "OR",
+        "context": [
+            "locale"
+        ],
+        "sourcePropertyNames": [
+            "sku-AudibleSignal.x_bodyColor"
+        ],
+        "isAutogen": true,
+        "isRecordSearchEnabled": true,
+        "ecr:type": "dimension",
+        "ecr:createDate": "2020-05-01T18:19:57.690942Z",
+        "ecr:lastModifiedBy": "interserver",
+        "ecr:lastModified": "2020-05-01T18:19:57.690942Z"
+    }
+}

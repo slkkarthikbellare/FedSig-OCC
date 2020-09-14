@@ -1,0 +1,30 @@
+{
+  "keys": {
+    "/v1/calculateShipping": ""
+  },
+  "occEnv": {
+    "host": "",
+    "applicationKey": ""
+  },
+  "idcs": {
+    "host": "",
+    "clientID": "",
+    "clientSecret": ""
+  },
+  "usps": {
+    "username": "850FEDER6969"
+  },
+  "globalAddressValidation": {
+    "key": "NB4Uqxrzse-iy2y4sRXAoR**nSAcwXpxhQ0PC2lXxuDAZ-**",
+    "url": "https://address.melissadata.net/v3/WEB/GlobalAddress/doGlobalAddress"
+  },
+  "endPoints" : {
+    "EXTERNAL_PRICE_URL" : "https://castirontest.federalsignal.com/getprice"
+  },
+  "castiron" : {
+    "host" : "https://castirontest.federalsignal.com"
+  },
+  "snappay" : {
+    "host" : "https://snappaytest.federalsignal.com/WS/ManageServices.asmx"
+  }
+}

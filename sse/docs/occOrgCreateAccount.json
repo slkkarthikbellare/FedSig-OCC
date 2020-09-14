@@ -1,0 +1,143 @@
+{
+    "organization": {
+        "taxReferenceNumber": null,
+        "siteOrganizationProperties": [],
+        "organizationLogo": null,
+        "delegateApprovalManagement": false,
+        "secondaryAddresses": [
+            {
+                "address": {
+                    "country": "US",
+                    "city": "Milwaukee",
+                    "jde_address_type": null,
+                    "postalCode": "53201",
+                    "companyName": "Testing Org 0806",
+                    "jde_customer_number": null,
+                    "jde_payment_terms": null,
+                    "county": null,
+                    "fs_extension": "555",
+                    "state": "WI",
+                    "is_billing_address": true,
+                    "fs_site_id": "siteUS",
+                    "jde_trade_discount_code": null,
+                    "types": [],
+                    "jde_tax_code": null,
+                    "address3": null,
+                    "address2": null,
+                    "address1": "1234 test drive",
+                    "jde_hold_code": null,
+                    "jde_has_active_price": null,
+                    "phoneNumber": "414-202-1234",
+                    "is_shipping_address": true,
+                    "jde_address_sub_type": null,
+                    "repositoryId": "1047305",
+                    "jde_is_branch": true
+                },
+                "addressType": "Address1"
+            }
+        ],
+        "source": "selfRegistration",
+        "type": null,
+        "parentOrganization": null,
+        "derivedShippingMethods": [],
+        "customerType": null,
+        "members": [
+            {
+                "repositoryId": "1037197"
+            }
+        ],
+        "id": "600013",
+        "relativeRoles": [
+            {
+                "function": "admin",
+                "repositoryId": "500046"
+            },
+            {
+                "function": "buyer",
+                "repositoryId": "500047"
+            },
+            {
+                "function": "approver",
+                "repositoryId": "500048"
+            },
+            {
+                "function": "accountAddressManager",
+                "repositoryId": "500049"
+            },
+            {
+                "function": "profileAddressManager",
+                "repositoryId": "500050"
+            }
+        ],
+        "dunsNumber": null,
+        "derivedAuthorizationCode": null,
+        "derivedUseAllPaymentMethodsFromSite": null,
+        "derivedTaxReferenceNumber": null,
+        "contract": null,
+        "derivedCustomerType": null,
+        "active": false,
+        "vatReferenceNumber": null,
+        "taxExemptionCode": null,
+        "derivedType": null,
+        "allowPunchoutShopping": null,
+        "useAllShippingMethodsFromSite": null,
+        "derivedTaxExemptionCode": null,
+        "approvalRequired": false,
+        "derivedAllowPunchoutShopping": null,
+        "derivedVatReferenceNumber": null,
+        "punchoutUserId": null,
+        "name": "Testing Org 0806",
+        "ancestorOrganizations": [],
+        "uniqueId": null,
+        "authorizationCode": null,
+        "jde_credit_terms_status": null,
+        "description": null,
+        "derivedBillingAddress": null,
+        "derivedUniqueId": null,
+        "organizationLogoURL": null,
+        "derivedContract": null,
+        "paymentMethods": [],
+        "shippingMethods": [],
+        "derivedDunsNumber": null,
+        "derivedOrganizationLogo": null,
+        "allSecondaryAddresses": {
+            "Address1": {
+                "country": "US",
+                "city": "Milwaukee",
+                "jde_address_type": null,
+                "postalCode": "53201",
+                "companyName": "Testing Org 0806",
+                "jde_customer_number": null,
+                "jde_payment_terms": null,
+                "county": null,
+                "fs_extension": "555",
+                "state": "WI",
+                "is_billing_address": true,
+                "fs_site_id": "siteUS",
+                "jde_trade_discount_code": null,
+                "types": [],
+                "jde_tax_code": null,
+                "address3": null,
+                "address2": null,
+                "address1": "1234 test drive",
+                "jde_hold_code": null,
+                "jde_has_active_price": null,
+                "phoneNumber": "414-202-1234",
+                "is_shipping_address": true,
+                "jde_address_sub_type": null,
+                "repositoryId": "1047305",
+                "jde_is_branch": true
+            }
+        },
+        "orderPriceLimit": null,
+        "fs_custom_orgaization_json": null,
+        "derivedShippingAddress": null,
+        "derivedUseAllShippingMethodsFromSite": null,
+        "useAllPaymentMethodsFromSite": null,
+        "derivedPaymentMethods": [],
+        "shippingAddress": null,
+        "derivedDescription": null,
+        "billingAddress": null,
+        "useExternalApprovalWebhook": false
+    }
+}

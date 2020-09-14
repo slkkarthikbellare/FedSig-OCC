@@ -1,0 +1,21 @@
+{
+  "keys": {
+    "/v1/calculateShipping": "U4YuFVaC5oX374A72OX75nIHYJ9EpE2tMU49ezMKONOvgFIaOO65FVjSVfQUINmpFRMNxBKwEJcbmM4CR4jjtA=="
+  },
+  "occEnv": {
+    "host": "https://ccadmin-test-z52a.oracleoutsourcing.com",
+    "applicationKey": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIzMWM2MzY5Zi1lZTEzLTQzZDktOWVkOS0xODlmMTYzYzBkNGIiLCJpc3MiOiJhcHBsaWNhdGlvbkF1dGgiLCJleHAiOjE2MjIyMTE1NDYsImlhdCI6MTU5MDY3NTU0Nn0=.SzqFPaxxlgOFA1DJ4QhBCk1TvtqMKaLNVhX1Ur9JKzQ="
+  },
+  "idcs": {
+    "host": "https://idcs-dc19c630b450443b8bd752acd4f7ee41.identity.oraclecloud.com",
+    "clientID": "461370efb8044052a875a6be71db9670",
+    "clientSecret": "6e7247ef-8696-4761-8f20-8b6e15324039"
+  },
+  "globalAddressValidation": {
+    "key": "BM5c2WBzBP0SsbcVLjrlcD**nSAcwXpxhQ0PC2lXxuDAZ-**",
+    "url": "https://address.melissadata.net/v3/WEB/GlobalAddress/doGlobalAddress"
+  },
+  "castiron": {
+    "host": "https://castirontest.federalsignal.com"
+  }
+}

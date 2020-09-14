@@ -1,0 +1,16 @@
+{
+  "keys": {},
+  "occEnv": {
+    "host": "https://ccadmin-stage-z52a.oracleoutsourcing.com",
+    "applicationKey": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJlMDJkMjlhYy0zMzc4LTRmYTYtYTc3Ny0wMmVjM2Y0Y2FiYzIiLCJpc3MiOiJhcHBsaWNhdGlvbkF1dGgiLCJleHAiOjE2MjMxNjkxODUsImlhdCI6MTU5MTYzMzE4NX0=.sm8z/G9gwGCl50iucAAOSCp91KixXW203JjbamMIjGQ="
+  },
+  "idcs": {
+    "host": "https://idcs-2e66f67a6a074adfa0693957174e7a88.identity.oraclecloud.com",
+    "clientID": "cf9e7eff1bc04eab99c32fefdb9be062",
+    "clientSecret": "4a0b902a-ddbd-4eea-a5c8-0a7493a3bc0d"
+  },
+  "globalAddressValidation": {
+    "key": "deU8UDvcsgtAr2cip9qFt9**",
+    "url": "https://address.melissadata.net/v3/WEB/GlobalAddress/doGlobalAddress"
+  }
+}

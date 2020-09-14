@@ -1,0 +1,10 @@
+.vscode
+*/**/node_modules
+*/**/package-lock.json
+*/**/nohup.out
+*/**/InvoicePaymentMethod.zip
+*/**/copy_zip.sh
+*/**/fedSigIntegrations.zip.bak
+*/**/externalPriceSSE.zip.bak
+*/**/.DS_Store
+.DS_Store

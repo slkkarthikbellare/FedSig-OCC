@@ -1,0 +1,79 @@
+{
+  "author": "Pierce Washington",
+  "config": {
+    "port": "3000"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "btoa": "^1.2.1",
+    "config": "latest",
+    "dateformat": "latest",
+    "debug": "^4.1.1",
+    "dotenv": "^8.2.0",
+    "jsonpath-plus": "^1.1.0",
+    "mustache": "^3.1.0",
+    "nconf": "^0.10.0",
+    "nodemon": "^2.0.2",
+    "occsrest": "../oracle-commerce-sdk",
+    "qs": "^6.9.4",
+    "usps-webtools-promise": "^2.2.0",
+    "uuid": "^8.1.0"
+  },
+  "description": "Federal Signal SSE's for Integrations",
+  "devDependencies": {
+    "body-parser": "latest",
+    "express": "latest",
+    "gulp": "latest",
+    "gulp-jasmine": "latest",
+    "jshint": "latest",
+    "request": "latest",
+    "winston": "latest"
+  },
+  "license": "SEE LICENSE IN LICENSE.TXT",
+  "main": "/app/index.js",
+  "name": "fedSigIntegrations",
+  "authenticatedUrls": [
+    {
+      "url": "/ccstorex/custom/v1/userProfile/resetPassword",
+      "method": [
+        "post"
+      ]
+    }
+  ],
+  "publicUrls": [
+    "/ccstorex/custom/v1/calculateShipping",
+    "/ccstorex/custom/v1/webhook-test",
+    "/ccstorex/custom/v1/fedSigExternalPayment",
+    "/ccstorex/custom/v1/validate-prices",
+    "/ccstorex/custom/v1/createProfileToJDEAccount",
+    "/ccstorex/custom/v1/updateProfileToJDEAccount",
+    "/ccstorex/custom/v1/createOrgToJDEAccount",
+    "/ccstorex/custom/v1/updateOrgToJDEAccount",
+    "/ccstorex/custom/v1/customerOrders",
+    "/ccstorex/custom/v1/customerOrderDetails",
+    "/ccstorex/custom/v1/customerInvoices",
+    "/ccstorex/custom/v1/customerInvoicePDF",
+    "/ccstorex/custom/v1/addressVerification",
+    "/ccstorex/custom/v1/submitOrder",
+    "/ccstorex/custom/v1/getExternalPrice2",
+    "/ccstorex/custom/v1/userProfile"
+  ],
+  "scripts": {
+    "lint": "jshint ./app || rem",
+    "start": "nodemon index.js",
+    "test": "gulp test"
+  },
+  "translations": [
+    {
+      "description": "Sample implementations of standard OCCS WebHook Targets.",
+      "language": "en_US",
+      "name": "Oracle Commerce Cloud WebHook Targets Extension"
+    },
+    {
+      "description": "Implementaciones de muestra de objetivos WebHook estandar de OCCS.",
+      "language": "es_ES",
+      "name": "Extension de WebHook de Oracle Commerce Cloud"
+    }
+  ],
+  "version": "0.0.1"
+}
